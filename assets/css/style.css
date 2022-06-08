@@ -24,8 +24,51 @@ h1 {
 }
 
 .answer-area {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin: 30px, 0;
+    margin: 20px auto;
+    width:400px;
+    height:400px;
+    background-color:#fff;
+    display:grid;
+    grid-template-columns: 200px 200px;
+    grid-row: auto auto;
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+
+}    
+
+.answer-left {
+    background-color:#333;
+    padding:20px;
+    border-radius:10px;
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:40px;
+    margin-left: calc(50% - 50vw);
+    
+}
+
+.answer-right {
+    background-color:#333;
+    padding:20px;
+    border-radius:10px;
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:40px;
+    margin-right: calc(50% - 50vw);
+    
+}
+
+button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 2rem;
+}
+
+button:focus { 
+    outline: orange auto 5px 
 }
