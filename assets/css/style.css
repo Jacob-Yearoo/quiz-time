@@ -21,6 +21,8 @@ h1 {
     background-color: silver;
     font-size: 3rem;
     margin-top: 150px;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
 }
 
 .answer-area {
@@ -71,4 +73,21 @@ button {
 
 button:focus { 
     outline: orange auto 5px 
+}
+
+#right-or-wrong {
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    margin-top: 250px;
+    gap: 200px;
+}
+
+#footer {
+    font-size: 4rem;
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+    gap: 150px;
+
 }
