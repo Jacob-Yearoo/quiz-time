@@ -2,6 +2,7 @@
 
 body {
     font-family: 'Raleway', sans-serif;
+    box-sizing: border-box;
 }
 
 h1 {
@@ -29,16 +30,22 @@ h1 {
     margin: 20px auto;
     width:400px;
     height:400px;
-    background-color:#fff;
+    background-color:#333;
+    padding:20px;
+    padding-right: 40px;
+    border-radius:10px;
+    color:#fff;
     display:grid;
     grid-template-columns: 200px 200px;
     grid-row: auto auto;
     grid-column-gap: 20px;
     grid-row-gap: 20px;
+    font-size:40px;
+    outline: black;
 
 }    
 
-.answer-left {
+/* .answer-left {
     background-color:#333;
     padding:20px;
     border-radius:10px;
@@ -62,11 +69,11 @@ h1 {
     font-size:40px;
     margin-right: calc(50% - 50vw);
     
-}
+} */
 
 button {
     background: none;
-    border: none;
+    /* border: none; */
     color: white;
     font-size: 2rem;
 }
@@ -75,16 +82,18 @@ button:focus {
     outline: orange auto 5px 
 }
 
-.next-container {
+.next-container, .restart-container {
     display: flex;
     background-color: #333;
     border-radius: 10px;
     padding: 10px;
     width: fit-content;
-    position: absolute;
+    position: relative;
+    margin-top: 20px;
+    justify-content: center;
 }
 
-.next-btn {
+.next-btn, .restart-btn {
     font-size: 4rem;
 }
 
