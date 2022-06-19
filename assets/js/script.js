@@ -18,7 +18,7 @@ nextBtn.addEventListener('click', () => {
 
 resetbtn.addEventListener('click', () => {
     answerElement.classList.add('hide')
-    questionElement.textContent = `Thanks for playing! you scored (blank) out of (blank)`
+    questionElement.textContent = `Thanks for playing!`
     nextBtn.classList.remove('hide')
 })
 
@@ -37,6 +37,7 @@ function nextQuestion() {
 }
 
 function showQuestion(question) {
+    answerElement.classList.remove('hide')
     questionElement.innerText = question.question
     question.answers.forEach(answer => {
         const button = document.createElement('button')
