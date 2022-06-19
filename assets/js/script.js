@@ -8,13 +8,6 @@ const questionElement = document.getElementById('question')
 const answerElement = document.getElementById('answers')
 
 
-nextBtn.addEventListener('click', () => {
-    currentQuestionIndex++
-    nextQuestion()
-})
-
-
-
 const qList = [
     {
         question: 'in which continent are Chile, Argentina and Brazil?', answers: [
@@ -54,16 +47,31 @@ const qList = [
     },
 ]
 
+// function startGame() {
+//     nextBtn.addEventListener('click'); {
+//         answerElement.classList.remove('hide')
+//     }
+// }
+
+nextBtn.addEventListener('click', () => {
+    currentQuestionIndex++
+    nextQuestion()
+})
+
 let shuffledQuestions = qList.sort()
 let currentQuestionIndex = 0
 
+function nextQuestion() {
+    showQuestion(shuffledQuestions[currentQuestionIndex])
+    resetGameState()
+}
 
 function showQuestion(question) {
     questionElement.innerText = question.question
     question.answers.forEach(answer => {
         const button = document.createElement('button')
         button.innerText = answer.text
-        button.classList.add('button')
+        button.classList.add('btn')
         if (answer.correct) {
             button.dataset.correct = answer.correct
         }
@@ -72,19 +80,15 @@ function showQuestion(question) {
     });
 }
 
-function nextQuestion() {
-    showQuestion(shuffledQuestions[currentQuestionIndex])
-}
-
 function checkAnswer(e) {
     const selectedButton = e.target
     const correct = selectedButton.dataset.correct
-    setStatusClass(document.body, correct)
-    Array.from(answerButtonsElement.children).forEach(button => {
-      setStatusClass(button, button.dataset.correct)
+    answerHighlight(document.body, correct)
+    Array.from(answerElement.children).forEach(button => {
+      answerHighlight(button, button.dataset.correct)
     })
     if (shuffledQuestions.length > currentQuestionIndex + 1) {
-      nextButton.classList.remove('hide')
+      nextBtn.classList.remove('hide')
 }}
 
 function incrementScore() {
@@ -95,8 +99,25 @@ function incrementWrongScore() {
 
 }
 
-function restartGame() {
-
+function resetGameState() {
+    removeHighlight(document.body)
+    nextBtn.classList.add('hide')
+    // while (answerElement.firstChild) {
+    //     answerElement.removeChild(answerElement.firstChild)
+    // }
 }
 
+function answerHighlight(element, correct) {
+    removeHighlight(element)
+    if (correct) {
+        element.classList.add('correct')
+    } else {
+        element.classList.add('wrong')
+    }
+}
+
+function removeHighlight(element) {
+    element.classList.remove('correct')
+    element.classList.remove('wrong')
+}
 

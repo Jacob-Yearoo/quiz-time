@@ -78,6 +78,15 @@ button {
     font-size: 2rem;
 }
 
+.btn.correct {
+    background-color: green;
+    color: black;
+}
+
+.btn.wrong {
+    background-color: red;
+}
+
 button:focus { 
     outline: orange auto 5px 
 }
@@ -112,4 +121,8 @@ button:focus {
     margin-top: 100px;
     gap: 150px;
 
+}
+
+.hide {
+    display: none;
 }
