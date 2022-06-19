@@ -111,8 +111,10 @@ button:focus {
     display: flex;
     justify-content: center;
     margin-top: 250px;
-    gap: 200px;
+    gap: 100px;
 }
+
+
 
 #footer {
     font-size: 4rem;
