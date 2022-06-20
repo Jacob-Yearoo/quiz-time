@@ -1,108 +1,104 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Jacob Yearoo - Quiz Time
 
-Welcome Jacob-Yearoo,
+Project two - interactive front-end site
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+I have made a very simple online quiz, it aims to present the user with a question and 4 answers which then give feedback dependent on whether the answer was correct or not.
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+The Value that I will get out of this website is:
 
-## Gitpod Reminders
+- Valuable experience learning Javascript
+- Provide entertainment for visitors to the site 
+- Includes links to my social media and Github profiles, so could potentially increase my prospects
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+The Value that visitors will get from this site are:
 
-`python3 -m http.server`
+- Some new knowledge on general questions that they may not have known before
+- Some entertainment to pass the time
 
-A blue button should appear to click: _Make Public_,
 
-Another blue button should appear to click: _Open Browser_.
+## Demo
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+https://jacob-yearoo.github.io/quiz-time/
 
-A blue button should appear to click: _Make Public_,
 
-Another blue button should appear to click: _Open Browser_.
+![Am I responsive](https://i.imgur.com/tBDjk3r.png)
+## User Experience
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+### The Strategy
+The idea was to provide a small fun distraction for users.
+### The Scope
+I wanted to make the game uncomplicated, it's very simple, provides feedback on right and wrong answers to keep visitors engaged. 
+### The Structure
+Everything is on one page, the questions are displayed in the same box, and new answers occupy the grid beneath the answer, below that are the buttons to start the game, end the game and to proceed to the next question. the page was designed to be condensed so it's not cumbersome to use and can be easliy accessible to mobile users.
+### The Skeleton
 
-To log into the Heroku toolbelt CLI:
+[Main Structure Wireframe](https://i.imgur.com/Ub1KGCD.jpg?1)
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+[2nd Mock up](https://i.imgur.com/4u7NhYd.jpg?1)
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
 
-------
+### The Surface
 
-## Release History
+I opted to keep all of the content simple Grey/White to provide a contrast and make it easy to read
+## Features
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+- text content changes depending on what buttons you press
+- "start" and "next" to progress the quiz
+- "end" button to break out of the game 
+- social media links at the bottom of the page
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+## Features I'd Like to Implement
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+- I'd like to include a score counter that increments score dependant on your answer
+- would like to add some graphics, more than what's just in the heading.
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+## Tech
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+**HTML:** Used to input all of the content on index.html
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+**CSS:** Used to style all of the content, and to adjust responsiveness on different screen sizes.
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+**Javascript:** Used to write out the functions that allow the game to work.
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+**Google Fonts:** Supplied the fonts for the header and body.
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+**Font Awesome:** Used for the social media icons in the footer.
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+## Testing
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+The website does achieve the intended goal of providing some light entertainment and teaching users about some new knowledge that they may not have had before.
+If the user finds they want to know more about me all the social media links work as intended and open in a new tab for ease of access.
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+It's has passed all validators.
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+The site was tested on Chrome, Firefox, Edge and Safari to ensure the desired outcome no matter where it is being viewed from, I also adjusted the site to remain readable on different screen sizes (going from my 5120px wide screen, to regular full HD screens, to tablets and finally to phones with the Iphone 5 being the lowest size I made adjustments for)
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+![Lighthouse test](https://i.imgur.com/YRn5Upd.png)
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
 
-------
+## Bugs
 
-## FAQ about the uptime script
+![Bugs table](https://i.imgur.com/8vuSgzU.png)
+## Deployment
 
-**Why have you added this script?**
+This site is hosted using GitHub pages, To set up GitHub pages you must;
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
+1. Go into the repository of your choice
+2. Find the "Settings" tab and then scroll down to the "Pages" tab
+3. Select the "main" branch from your root directory
+4. Then click Save.
 
-**How will this affect me?**
+## GitPod Commits
+The deployed site will update automatically upon new commits to the master branch. In order for the site to deploy correctly on GitHub pages, the landing page must be named index.html.
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
+## Credits
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
+### Acknowledgements
+Received a lot of tips and tricks on my Javascript from Web Dev Simplified's Youtube channel. can be found [here.](https://www.youtube.com/c/WebDevSimplified)
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
+the design of the quiz was inspired by WebDevSimplified's video on "how to create a quiz using JS" https://www.youtube.com/watch?v=riDzcEQbX6k
 
-**So….?**
+I would also like to credit WebDevSimplified for my checkAnswer function as that was used by me, but written by him. https://www.youtube.com/watch?v=riDzcEQbX6k
 
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
+Special thanks to the Tutors at Code Institute for the support they've given.
 
-**Can I opt out?**
-
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
-
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
-
-**Anything more?**
-
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
-
----
-
-Happy coding!

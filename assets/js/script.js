@@ -1,6 +1,7 @@
+
+// Constant Variables
 const startBtn = document.getElementById('start-btn')
 const nextBtn = document.getElementById('next-btn')
-const nextContainer = document.getElementsByClassName('next-container')
 const questionElement = document.getElementById('question')
 const resetbtn = document.getElementById('restart-btn')
 const answerElement = document.getElementById('answers')
@@ -142,10 +143,11 @@ const qList = [
     },
 ]
 
+// Global Variables
 let shuffledQuestions, currentQuestionIndex
-let rightScore = 0
-let wrongScore = 0
 
+
+// Event Listeners
 startBtn.addEventListener('click', startGame,)
 nextBtn.addEventListener('click', () => {
     currentQuestionIndex++
@@ -158,6 +160,9 @@ resetbtn.addEventListener('click', () => {
     startBtn.classList.remove('hide')
 })
 
+// Functions
+
+// format for this function is inspired by WebDevSimplified, referenced in the README
 /**
  * This function is used to start the game
  *  and generate the next question by looping through
@@ -182,6 +187,7 @@ function nextQuestion() {
     showQuestion(shuffledQuestions[currentQuestionIndex])
 }
 
+// format for this function is inspired by WebDevSimplified, referenced in the README
 /**
  * this functions is responsible for populating the question
  *  and answer containers with the appropriate content
