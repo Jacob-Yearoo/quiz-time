@@ -216,7 +216,12 @@ function resetGameState() {
     }
 }
 
+
+// This Function should be credited to Web Dev Simplified 
+// https://www.youtube.com/c/WebDevSimplified
+// he created this function as part of his "create a quiz" video
 /**
+ * 
  * this functions uses the button click event as a parameter
  * and if the selected button has the correct dataset
  *  from the array it determines if the answer is correct or incorrect
