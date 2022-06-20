@@ -222,7 +222,6 @@ function resetGameState() {
     }
 }
 
-
 // This Function should be credited to Web Dev Simplified 
 // https://www.youtube.com/c/WebDevSimplified
 // he created this function as part of his "create a quiz" video
