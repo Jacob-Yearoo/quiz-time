@@ -1,4 +1,4 @@
-/* Big general changes */
+/* Big general changes that affect the whole page */
 
 body {
     font-family: 'Raleway', sans-serif;
@@ -10,11 +10,15 @@ h1 {
     font-size: 4rem;
 }
 
+/* for the heading */
+
 #heading {
     border-bottom-width: 2px;
     border-bottom-style: solid;
     
 }
+
+/* styling to the question area and the grid that contains the answers */
 
 .question-area {
     display: flex;
@@ -24,6 +28,7 @@ h1 {
     margin-top: 150px;
     margin-left: calc(50% - 50vw);
     margin-right: calc(50% - 50vw);
+    padding: 0 15px;
 }
 
 .answer-area {
@@ -45,35 +50,10 @@ h1 {
 
 }    
 
-/* .answer-left {
-    background-color:#333;
-    padding:20px;
-    border-radius:10px;
-    color:#fff;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:40px;
-    margin-left: calc(50% - 50vw);
-    
-}
-
-.answer-right {
-    background-color:#333;
-    padding:20px;
-    border-radius:10px;
-    color:#fff;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:40px;
-    margin-right: calc(50% - 50vw);
-    
-} */
+/* styling to the buttons specifically, additional styling for when the buttons are correct or incorrect */
 
 button {
     background: none;
-    /* border: none; */
     color: white;
     font-size: 2rem;
 }
@@ -102,19 +82,23 @@ button:focus {
     justify-content: center;
 }
 
+.next-container {
+    float: right;
+}
+
 .next-btn, .restart-btn {
     font-size: 4rem;
 }
 
-#right-or-wrong {
+/* #right-or-wrong {
     font-size: 2rem;
     display: flex;
     justify-content: center;
     margin-top: 250px;
     gap: 100px;
-}
+} */
 
-
+/* Styling for the footer/social media links */
 
 #footer {
     font-size: 4rem;
@@ -125,6 +109,67 @@ button:focus {
 
 }
 
+/* hide class for additional JS functionality */
+
 .hide {
     display: none;
+}
+
+/* Media queries */
+
+/* Media query for screens smaller than 1024px wide (i.e. tablets) */
+
+@media screen and (max-width: 1024px) {
+    #footer {
+        margin-top: 20px;
+    }
+    html {
+        max-height: fit-content;
+    }
+}
+
+/* Media query for screens smaller than 810px wide (i.e. smaller tablets) */
+@media screen and (max-width: 810px) {
+    #question {
+        margin-top: 50px;
+    }
+}
+
+/* Media query for screens smaller than 414px wide (i.e. larger smart phones)*/
+@media screen and (max-width: 414px) {
+    h1 {
+        font-size: 2rem;
+    }
+    #question {
+        font-size: 2rem;
+    }
+    #answers {
+        width: 200px;
+        height: 200px;
+        grid-template-columns: 100px 100px;
+    }
+    .btn {
+        font-size: 1rem;
+    }
+    .next-container, .restart-container {
+        margin-top: 2px;
+    }
+    #footer {
+        margin-top: 100px;
+    }
+}
+
+/* Media query for screens smaller than 320px wide (i.e. smaller smart phones) */
+@media screen and (max-width: 320px) {
+    #answers {
+         grid-template-columns: auto;
+         padding: 20px;
+    }
+    #question {
+        margin-top: 15px;
+        font-size: 1.5rem;
+    }
+    #restart-btn, #next-btn {
+        font-size: 1.5rem;
+    }
 }

@@ -1,4 +1,8 @@
 
+
+// Wait for DOM to finish loading before playing the game
+// alerts the user with a message to signify everything is ready
+
 document.addEventListener('DOMContentLoaded', function() {
     alert('Welcome Challenger, we are ready for you.')
 })
@@ -24,7 +28,7 @@ resetbtn.addEventListener('click', () => {
 
 
 function startGame() {
-    shuffledQuestions = qList.sort(() => Math.random() - .5)
+    shuffledQuestions = qList.sort(() => Math.floor(Math.random() * 15));
     currentQuestionIndex = 0
     questionElement.classList.remove('hide')
     nextQuestion()
