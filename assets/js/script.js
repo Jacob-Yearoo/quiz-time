@@ -1,134 +1,9 @@
-
-
-// Wait for DOM to finish loading before playing the game
-// alerts the user with a message to signify everything is ready
-
-document.addEventListener('DOMContentLoaded', function() {
-    alert('Welcome Challenger, we are ready for you.')
-})
-
+const startBtn = document.getElementById('start-btn')
 const nextBtn = document.getElementById('next-btn')
+const nextContainer = document.getElementsByClassName('next-container')
 const questionElement = document.getElementById('question')
 const resetbtn = document.getElementById('restart-btn')
 const answerElement = document.getElementById('answers')
-
-let shuffledQuestions, currentQuestionIndex
-
-nextBtn.addEventListener('click', startGame)
-nextBtn.addEventListener('click', () => {
-    currentQuestionIndex++
-    nextQuestion()
-})
-
-resetbtn.addEventListener('click', () => {
-    answerElement.classList.add('hide')
-    questionElement.textContent = `Thanks for playing!`
-    nextBtn.classList.remove('hide')
-})
-
-/**
- * This function is used to start the game and generate the next question by looping through the question index and sorting it
- * this is called when the "next" button is first pressed.
- */
-function startGame() {
-    shuffledQuestions = qList.sort(() => Math.floor(Math.random() * 15));
-    currentQuestionIndex = 0
-    questionElement.classList.remove('hide')
-    nextQuestion()
-  }
-
-/**
- * used in conjuction with the startGame function, it's responsible for choosing the next question in the array
- * and also for resetting the correct and incorrect answer colours
- */
-function nextQuestion() {
-    resetGameState()
-    showQuestion(shuffledQuestions[currentQuestionIndex])
-}
-
-/**
- * this functions is responsible for populating the question and answer containers with the appropriate content
- * it creates new buttons for each question
- * it also adds the correct data-type to the correct answer which is used in the checkAnswer function
- */
-function showQuestion(question) {
-    answerElement.classList.remove('hide')
-    questionElement.innerText = question.question
-    question.answers.forEach(answer => {
-        const button = document.createElement('button')
-        button.innerText = answer.text
-        button.classList.add('btn')
-        if (answer.correct) {
-            button.dataset.correct = answer.correct
-        }
-        button.addEventListener('click', checkAnswer)
-        answerElement.appendChild(button)
-    });
-}
-
-/**
- * this function removes the "next" button until the question has been answered
- * it's also responsible for removing the previous questions' answers
- * it is called in the startGame and nextQuestion functions
- */
-function resetGameState() {
-    nextBtn.classList.add('hide')
-    while (answerElement.firstChild) {
-        answerElement.removeChild(answerElement.firstChild)
-    }
-}
-
-/**
- * this functions uses the button click event as a parameter
- * and if the selected button has the correct dataset from the array it determines if the answer is correct or incorrect and changes the colour of all the answers
- * it's also responsible of removing the 'hide' class from the "next" button once the question has been answered
- */
-function checkAnswer(e) {
-    const selectedButton = e.target
-    const correct = selectedButton.dataset.correct
-    answerHighlight(document.body, correct)
-    Array.from(answerElement.children).forEach(button => {
-      answerHighlight(button, button.dataset.correct)
-    })
-    if (shuffledQuestions.length > currentQuestionIndex + 1) {
-      nextBtn.classList.remove('hide')
-}}
-
-/**
- * simple function used to change the colour of the answer buttons depending on if they have a true or false value in the qList array
- * called when the checkAnswer function is used
- */
-function answerHighlight(element, correct) {
-    removeHighlight(element)
-    if (correct) {
-        element.classList.add('correct')
-    } else {
-        element.classList.add('wrong')
-    }
-}
-
-/**
- * used to remove the button colour for the next set of answers
- * called in the answerHighlight function
- */
-function removeHighlight(element) {
-    element.classList.remove('correct')
-    element.classList.remove('wrong')
-}
-
-// function incrementScore() {
-//     const right = document.getElementById('right')
-//     right.textContent = 0
-//     if (answerElement === 'correct') {
-//         right++        
-//     }
-// }
-
-// function incrementWrongScore() {
-
-// }
-
-
 const qList = [
     {
         question: 'in which continent are Chile, Argentina and Brazil?', answers: [
@@ -266,3 +141,122 @@ const qList = [
         ]
     },
 ]
+
+let shuffledQuestions, currentQuestionIndex
+let rightScore = 0
+let wrongScore = 0
+
+startBtn.addEventListener('click', startGame,)
+nextBtn.addEventListener('click', () => {
+    currentQuestionIndex++
+    nextQuestion()
+})
+
+resetbtn.addEventListener('click', () => {
+    answerElement.classList.add('hide')
+    questionElement.textContent = `Thanks for playing! give it another go if you want`
+    startBtn.classList.remove('hide')
+})
+
+/**
+ * This function is used to start the game
+ *  and generate the next question by looping through
+ *  the question index and sorting it
+ * this is called when the "next" button is first pressed.
+ */
+function startGame() {
+    shuffledQuestions = qList.sort(() => Math.floor(Math.random() * qList.length));
+    currentQuestionIndex = 0
+    questionElement.classList.remove('hide')
+    nextQuestion()
+    startBtn.classList.add('hide')
+  }
+
+/**
+ * used in conjuction with the startGame function,
+ *  it's responsible for choosing the next question in the array
+ * and also for resetting the correct and incorrect answer colours
+ */
+function nextQuestion() {
+    resetGameState()
+    showQuestion(shuffledQuestions[currentQuestionIndex])
+}
+
+/**
+ * this functions is responsible for populating the question
+ *  and answer containers with the appropriate content
+ * it creates new buttons for each question
+ * it also adds the correct data-type to the
+ *  correct answer which is used in the checkAnswer function
+ */
+function showQuestion(question) {
+    answerElement.classList.remove('hide')
+    questionElement.innerText = question.question
+    question.answers.forEach(answer => {
+        const button = document.createElement('button')
+        button.innerText = answer.text
+        button.classList.add('btn')
+        if (answer.correct) {
+            button.dataset.correct = answer.correct
+        }
+        button.addEventListener('click', checkAnswer)
+        answerElement.appendChild(button)
+    });
+}
+
+/**
+ * this function removes the "next" button until the question has been answered
+ * it's also responsible for removing the previous questions' answers
+ * it is called in the startGame and nextQuestion functions
+ */
+function resetGameState() {
+    nextBtn.classList.add('hide')
+    while (answerElement.firstChild) {
+        answerElement.removeChild(answerElement.firstChild)
+    }
+}
+
+/**
+ * this functions uses the button click event as a parameter
+ * and if the selected button has the correct dataset
+ *  from the array it determines if the answer is correct or incorrect
+ *  and changes the colour of all the answers
+ * it's also responsible of removing the 'hide' class
+ *  from the "next" button once the question has been answered
+ */
+function checkAnswer(e) {
+    const selectedButton = e.target
+    const correct = selectedButton.dataset.correct
+    answerHighlight(document.body, correct)
+    Array.from(answerElement.children).forEach(button => {
+      answerHighlight(button, button.dataset.correct)
+    })
+    if (shuffledQuestions.length > currentQuestionIndex + 1) {
+      nextBtn.classList.remove('hide')}
+    else {
+        questionElement.textContent = "You've reached the end! How did you do?"
+    }
+    }
+
+/**
+ * simple function used to change the colour of the answer buttons
+ *  depending on if they have a true or false value in the qList array
+ * called when the checkAnswer function is used
+ */
+function answerHighlight(element, correct) {
+    removeHighlight(element)
+    if (correct) {
+        element.classList.add('correct')
+    } else {
+        element.classList.add('wrong')
+    }
+}
+
+/**
+ * used to remove the button colour for the next set of answers
+ * called in the answerHighlight function
+ */
+function removeHighlight(element) {
+    element.classList.remove('correct')
+    element.classList.remove('wrong')
+}

@@ -71,32 +71,47 @@ button:focus {
     outline: orange auto 5px 
 }
 
-.next-container, .restart-container {
+.next-container {
     display: flex;
     background-color: #333;
     border-radius: 10px;
     padding: 10px;
     width: fit-content;
-    position: relative;
-    margin-top: 20px;
-    justify-content: center;
 }
 
-.next-container {
-    float: right;
+.start-container {
+    display: flex;
+    background-color: #333;
+    border-radius: 10px;
+    padding: 10px;
+    width: fit-content;
 }
 
-.next-btn, .restart-btn {
+.restart-container {
+    display: flex;
+    background-color: #333;
+    border-radius: 10px;
+    padding: 10px;
+    width: fit-content;
+}
+
+.action-btn {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+}
+
+#next-btn, #restart-btn, #start-btn {
     font-size: 4rem;
 }
 
-/* #right-or-wrong {
+#right-or-wrong {
     font-size: 2rem;
     display: flex;
     justify-content: center;
-    margin-top: 250px;
+    margin-top: 50px;
     gap: 100px;
-} */
+}
 
 /* Styling for the footer/social media links */
 
@@ -153,6 +168,9 @@ button:focus {
     }
     .next-container, .restart-container {
         margin-top: 2px;
+    }
+    #next-btn, #start-btn, #restart-btn {
+        font-size: 2rem;
     }
     #footer {
         margin-top: 100px;
